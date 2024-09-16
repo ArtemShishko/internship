@@ -25,7 +25,7 @@ class LibraryFragment : Fragment(R.layout.fragment_library) {
                 playlistTitle = R.string.library_saved_lyrics_title,
                 playlistItemSubTitle = R.string.library_saved_lyrics_subtitle
             ) {
-                val action = LibraryFragmentDirections.actionLibraryFragmentToLikedSongsFragment()
+                val action = LibraryFragmentDirections.actionLibraryFragmentToSavedLyricsFragment()
                 findNavController().navigate(action)
             }
 

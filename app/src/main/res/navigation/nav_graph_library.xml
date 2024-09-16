@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph_library"
+    app:startDestination="@id/libraryFragment">
+
+    <fragment
+        android:id="@+id/libraryFragment"
+        android:name="com.devshish.internship.presentation.ui.library.LibraryFragment"
+        android:label="@string/nav_library"
+        tools:layout="@layout/fragment_library">
+        <action
+            android:id="@+id/action_libraryFragment_to_localSongsFragment"
+            app:destination="@id/localSongsFragment" />
+        <action
+            android:id="@+id/action_libraryFragment_to_savedLyricsFragment"
+            app:destination="@id/savedLyricsFragment" />
+        <action
+            android:id="@+id/action_libraryFragment_to_localAlbumsFragment"
+            app:destination="@id/localAlbumsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/localSongsFragment"
+        android:name="com.devshish.internship.presentation.ui.songs.local.LocalSongsFragment"
+        android:label="@string/library_local_songs_title"
+        tools:layout="@layout/fragment_local_songs" />
+    <fragment
+        android:id="@+id/savedLyricsFragment"
+        android:name="com.devshish.internship.presentation.ui.songs.savedlyrics.SavedLyricsFragment"
+        android:label="@string/library_saved_lyrics_title"
+        tools:layout="@layout/fragment_saved_lyrics">
+        <action
+            android:id="@+id/action_savedLyricsFragment_to_lyricsFragment"
+            app:destination="@id/lyricsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/lyricsFragment"
+        android:name="com.devshish.internship.presentation.ui.lyrics.LyricsFragment"
+        tools:layout="@layout/fragment_lyrics">
+        <argument
+            android:name="searchSong"
+            app:argType="com.devshish.internship.domain.model.SearchSong" />
+    </fragment>
+    <fragment
+        android:id="@+id/localAlbumsFragment"
+        android:name="com.devshish.internship.presentation.ui.albums.local.LocalAlbumsFragment"
+        android:label="fragment_local_albums"
+        tools:layout="@layout/fragment_local_albums" >
+        <action
+            android:id="@+id/action_localAlbumsFragment_to_albumDetailsFragment"
+            app:destination="@id/albumDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/albumDetailsFragment"
+        android:name="com.devshish.internship.presentation.ui.albums.details.AlbumDetailsFragment"
+        android:label="fragment_album_details"
+        tools:layout="@layout/fragment_album_details" />
+</navigation>

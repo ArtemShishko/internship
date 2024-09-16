@@ -36,7 +36,7 @@ class WebFragment : Fragment(R.layout.fragment_web) {
 
         with(viewModel) {
             navigateForward.observe(viewLifecycleOwner) {
-                val action = WebFragmentDirections.actionWebFragmentToHomeFragment()
+                val action = WebFragmentDirections.actionWebFragmentToNavGraphHome()
                 findNavController().navigate(action)
             }
         }
